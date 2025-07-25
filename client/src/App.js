@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from './redux/slices/authSlice';
+import RegisterForm from './components/RegisterForm';
+import LoginForm from './components/LoginForm';
 
 function App() {
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Redux Auth Demo</h1>
+      {isAuthenticated ? (
+        <>
+          <p>Welcome, {user.email}</p>
+          <button onClick={() => dispatch(logout())}>Logout</button>
+        </>
+      ) : (
+        <>
+          <RegisterForm />
+          <LoginForm />
+        </>
+      )}
     </div>
   );
 }
