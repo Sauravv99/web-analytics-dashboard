@@ -9,6 +9,7 @@ const initialState = {
   isAuthenticated: !!token,
 };
 
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
