@@ -14,17 +14,47 @@ require('dotenv').config();
 const app = express();
 connectDB();
 
-const allowedOrigins = [
-    'http://localhost:3000', 
-    'https://analyticsdashboard-rho.vercel.app/',    // your actual Vercel URL
+// const allowedOrigins = [
+//     'http://localhost:3000', 
+//     'https://analyticsdashboard-rho.vercel.app/',    // your actual Vercel URL
+// ];
+
+// app.use(cors({
+//   origin: allowedOrigins,
+// //   credentials: true,           // set to true only if you’ll use cookies
+//   methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+//   allowedHeaders: ['Content-Type','Authorization']
+// }));
+
+// --- CORS (put this BEFORE express.json() and BEFORE routes) ---
+const whitelist = [
+  'http://localhost:3000',
+  'https://analyticsdashboard-rho.vercel.app'
 ];
 
-app.use(cors({
-  origin: allowedOrigins,
-//   credentials: true,           // set to true only if you’ll use cookies
-  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
-  allowedHeaders: ['Content-Type','Authorization']
-}));
+// If you also want to allow preview URLs like https://<hash>-analyticsdashboard-rho.vercel.app
+function isAllowedOrigin(origin) {
+  if (!origin) return true; // allow curl/Postman/health
+  if (whitelist.includes(origin)) return true;
+  try {
+    const url = new URL(origin);
+    return url.hostname.endsWith('.vercel.app'); // optional: allow all vercel.app previews
+  } catch {
+    return false;
+  }
+}
+
+const corsOptions = {
+  origin: (origin, cb) => (isAllowedOrigin(origin) ? cb(null, true) : cb(new Error('Not allowed by CORS'))),
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  // credentials: false // keep false since you’re not using cookies
+};
+
+app.use(cors(corsOptions));
+// Explicitly handle preflight for all routes
+app.options('*', cors(corsOptions));
+
 
 app.use(express.json());
 
