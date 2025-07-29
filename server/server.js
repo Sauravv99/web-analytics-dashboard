@@ -29,7 +29,7 @@ connectDB();
 // --- CORS (put this BEFORE express.json() and BEFORE routes) ---
 const whitelist = [
   'http://localhost:3000',
-  'https://analyticsdashboard-rho.vercel.app'
+  'https://analyticsdashboard-rho.vercel.app/'
 ];
 
 // If you also want to allow preview URLs like https://<hash>-analyticsdashboard-rho.vercel.app
