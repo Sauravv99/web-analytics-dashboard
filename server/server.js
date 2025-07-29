@@ -14,7 +14,18 @@ require('dotenv').config();
 const app = express();
 connectDB();
 
-app.use(cors());
+const allowedOrigins = [
+    'http://localhost:3000', 
+    'https://analyticsdashboard-rho.vercel.app/',    // your actual Vercel URL
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+//   credentials: true,           // set to true only if you’ll use cookies
+  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization']
+}));
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
