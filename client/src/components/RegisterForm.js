@@ -1,6 +1,7 @@
 // src/components/RegisterForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import axiosInstance from '../utils/axiosInstance';
 
 function RegisterForm() {
   const [formData, setFormData] = useState({
@@ -18,7 +19,8 @@ function RegisterForm() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axiosInstance.post('/api/auth/register', formData);
+      // await axios.post('http://localhost:5000/api/auth/register', formData);
       setMessage(res.data.message);
     } catch (err) {
       setMessage(err.response?.data?.message || 'Error registering');
