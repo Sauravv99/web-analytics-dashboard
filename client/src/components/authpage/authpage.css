@@ -1,0 +1,66 @@
+.auth-container{
+    /* border: 1px solid black; */
+    /* width: 50%; */
+    height: fit-content;
+    margin: auto;
+}
+
+/* Full-height section with a soft gradient background */
+.auth-container{
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(99, 102, 241, 0.12), transparent),
+              radial-gradient(1000px 500px at 90% 20%, rgba(16, 185, 129, 0.12), transparent),
+              linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  padding: 48px 0;
+}
+
+/* Card subtle elevation and hover lift */
+.card {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1.25rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+/* Larger inputs feel nicer in auth flows */
+.form-control-lg {
+  border-radius: 0.8rem;
+}
+
+/* Focus ring that matches Bootstrap primary but a touch softer */
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+/* Primary button polish */
+.btn-primary {
+  border-radius: 0.8rem;
+  font-weight: 600;
+}
+
+/* Make header stand out a bit */
+.card-header .h3 {
+  letter-spacing: -0.2px;
+}
+
+.cursor-ptr{
+    cursor: pointer;
+}
+
+.dash-btns{
+    background-color: black !important;
+    color: white !important;
+}
+
+input {
+   font-size:  16px !important;
+}
+
+/* Responsive spacing tweaks */
+@media (max-width: 575.98px) {
+  .auth-section {
+    padding: 32px 0;
+  }
+}

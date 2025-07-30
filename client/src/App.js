@@ -1,28 +1,24 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { logout } from './redux/slices/authSlice';
-import RegisterForm from './components/RegisterForm';
-import LoginForm from './components/LoginForm';
+import { useSelector } from 'react-redux';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import Dashboard from './components/dashboard/dashboard';
+import Authpage from './components/authpage/authpage';
+
 
 function App() {
-  const { isAuthenticated, user } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
   return (
-    <div>
-      <h1>Redux Auth Demo</h1>
-      {isAuthenticated ? (
-        <>
-          <p>Welcome, {user.email}</p>
-          <button onClick={() => dispatch(logout())}>Logout</button>
-        </>
-      ) : (
-        <>
-          <RegisterForm />
-          <LoginForm />
-        </>
-      )}
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Authpage />}
+      />
+      <Route
+        path="/dashboard"
+        element={isAuthenticated ? <Dashboard /> : <Navigate to="/" replace />}
+      />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
