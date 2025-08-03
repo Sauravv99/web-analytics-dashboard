@@ -1,0 +1,121 @@
+/* .sidebar {
+  width: 250px;
+  min-height: 100vh;
+  position: relative;
+  transition: all 0.3s;
+  z-index: 10000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1050;
+}
+@media (min-width: 992px) {
+  .sidebar {
+    left: 0;
+    position: static;
+    height: auto;
+    width: 250px;
+  }
+}
+
+.sidebar .nav-link {
+  padding: 12px 20px;
+  transition: background 0.2s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: #495057;
+  color: white;
+} */
+
+
+
+/* Default light theme using CSS variables */
+:root {
+  --sidebar-bg: #f8f9fa;
+  --sidebar-text: #212529;
+  --sidebar-hover-bg: #dee2e6;
+  --sidebar-toggle-btn-bg: #212529;
+  --sidebar-toggle-btn-color: #ffffff;
+}
+
+/* Dark theme overrides */
+[data-theme='dark'] {
+  --sidebar-bg: #212529;
+  --sidebar-text: #ffffff;
+  --sidebar-hover-bg: #495057;
+  --sidebar-toggle-btn-bg: #ffffff;
+  --sidebar-toggle-btn-color: #212529;
+}
+
+/* Sidebar base styles */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  position: relative;
+  transition: all 0.3s;
+  z-index: 10000;
+  box-shadow: 8px 6px 14px -13px;
+}
+
+/* Sidebar toggle button styles */
+.sidebar-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1050;
+  background-color: var(--sidebar-toggle-btn-bg);
+  color: var(--sidebar-toggle-btn-color);
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+/* Responsive adjustment for large screens */
+@media (min-width: 992px) {
+  .sidebar {
+    left: 0;
+    position: static;
+    height: auto;
+    width: 250px;
+  }
+}
+
+/* Nav links */
+.sidebar .nav-link {
+  color: var(--sidebar-text);
+  padding: 12px 20px;
+  transition: background 0.2s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: var(--sidebar-hover-bg);
+  color: var(--sidebar-text);
+}
+
+/* Button inside sidebar (like theme toggle) */
+.sidebar button {
+  background-color: transparent;
+  border: 1px solid var(--sidebar-text);
+  color: var(--sidebar-text);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar button:hover {
+  background-color: var(--sidebar-hover-bg);
+}
