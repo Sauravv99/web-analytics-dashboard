@@ -1,30 +1,63 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { logout } from "../../redux/slices/authSlice";
-import SideBar from "../sidebar/sidebar";
+import Header from "../header/header";
+import MonthlyCard from "../monthlycard/monthlycard";
+import "./dashboard.css"
 
 function Dashboard() {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
 
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate("/", { replace: true });
-  };
-
+  var monthlyData = [
+    {
+      "data":"12,316",
+      "title" : "Emails sent",
+      "percentage" :"+14%",
+      "icon" :"bi bi-envelope-fill",
+       "chartData" : [
+        { name: 'previous', value: 3316 },
+        { name: 'current', value: 9000 }
+        ]
+    },
+    {
+       "data":"431,225",
+      "title" : "Sales obtained",
+      "percentage" :"+21%",
+      "icon" :"bi bi-receipt",
+       "chartData" : [
+        { name: 'previous', value: 331225 },
+        { name: 'current', value: 100000 }
+        ]
+    },
+    {
+      "data":"32,441",
+      "title" : "New Clients",
+      "percentage" :"+5%",
+      "icon" :"bi bi-person-plus",
+       "chartData" : [
+        { name: 'previous', value: 16441 },
+        { name: 'current', value: 16000 }
+        ]
+    },
+    {
+      "data":"132,342",
+      "title" : "Traffic received",
+      "percentage" :"43%",
+      "icon" :"bi bi-stoplights",
+       "chartData" : [
+        { name: 'previous', value: 32340 },
+        { name: 'current', value: 100000 }
+        ]
+    }
+  ]
   return (
-    <div className="d-flex flex-column flex-lg-row">
-      <div
-        className="flex-grow-1"
-        style={{ padding: "30px", marginLeft: "0px" }}
-      >
-        <h1>Dashboard</h1>
-        <p>Welcome, {user?.email}</p>
-        <button onClick={handleLogout} className="btn btn-danger mt-3">
-          Logout
-        </button>
-      </div>
+    <div className="ms-md-4">
+      {/* <div className="ms-5 ms-md-4 flex-grow-1">
+       <Header/>
+      </div> */}
+      <div className="monthlycard-cont">
+          {monthlyData.map((eachdata,index)=>{
+           return (
+              <MonthlyCard cardDetails={eachdata} key={index}/>
+          );
+        })}
+       </div>
     </div>
   );
 }

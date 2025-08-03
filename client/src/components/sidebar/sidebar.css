@@ -63,7 +63,7 @@
   background-color: var(--sidebar-bg);
   color: var(--sidebar-text);
   position: relative;
-  transition: all 0.3s;
+  transition: left 0.3s ease;
   z-index: 10000;
   box-shadow: 8px 6px 14px -13px;
 }
@@ -118,4 +118,21 @@
 
 .sidebar button:hover {
   background-color: var(--sidebar-hover-bg);
+  color: var(--sidebar-text);
+}
+
+
+
+
+/* Responsive adjustment for large screens */
+@media (max-width: 600px) {
+ .sidebar{
+  width: 100vw;
+  }
+
+  .sidebar-toggle{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+  }
 }

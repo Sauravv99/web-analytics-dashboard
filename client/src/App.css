@@ -1,3 +1,15 @@
+:root {
+  --right-bg: #edeff1;
+  --right-text: #212529;
+}
+
+/* Dark theme overrides */
+[data-theme='dark'] {
+  --right-bg: #242c33;
+  --right-text: #ffffff;
+}
+
+
 .App {
   text-align: center;
 }
@@ -12,6 +24,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +48,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+ .maincomponents{
+  overflow-x: hidden;
+}
+
+.main-right-side{
+  background-color: var(--right-bg);
+  color: var(--right-text);
+}
+.cursor-pointer{
+  cursor: pointer;
 }

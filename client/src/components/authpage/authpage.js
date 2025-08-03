@@ -10,7 +10,7 @@ function Authpage () {
         <div className="auth-container py-2 px-3">
             { signup ? <RegisterForm setSignup={setSignup} /> : <LoginForm /> }
 
-        <p className="text-center  mt-3 mb-0 small">
+        <p className="text-center text-dark  mt-3 mb-0 small">
             By continuing you agree to our Terms &amp; Privacy Policy.
         </p>
         <div className="card-footer bg-transparent border-0 text-center py-4">

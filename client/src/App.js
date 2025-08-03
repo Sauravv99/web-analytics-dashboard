@@ -5,6 +5,8 @@ import Authpage from "./components/authpage/authpage";
 import TeamComponent from "./pages/teams/teams";
 import SideBar from "./components/sidebar/sidebar";
 import { useEffect } from "react";
+import "./App.css"
+import Header from "./components/header/header";
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.auth);
@@ -16,9 +18,10 @@ function App() {
   }, [theme]);
 
   return (
-     <div className="d-flex min-vh-100">
-      <SideBar />
-      <div className="flex-grow-1 p-3" style={{ marginLeft: "0px" }}>
+     <div className="d-flex min-vh-100 maincomponents">
+      {   isAuthenticated && <SideBar /> }
+      <div className="flex-grow-1 main-right-side" style={{ marginLeft: "0px" }}>
+          { isAuthenticated && <Header/>}
         <Routes>
           <Route
             path="/"
