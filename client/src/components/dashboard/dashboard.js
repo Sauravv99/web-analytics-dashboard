@@ -1,5 +1,6 @@
-import Header from "../header/header";
 import MonthlyCard from "../monthlycard/monthlycard";
+import TransactionLayout from "../transactionlayout/transactionlayout";
+import TransportLineChart from "../transportlinechart/transportlinechart";
 import "./dashboard.css"
 
 function Dashboard() {
@@ -57,6 +58,10 @@ function Dashboard() {
               <MonthlyCard cardDetails={eachdata} key={index}/>
           );
         })}
+       </div>
+       <div className="d-block d-md-flex">
+          <TransportLineChart/>
+          <TransactionLayout/>
        </div>
     </div>
   );

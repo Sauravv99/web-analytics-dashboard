@@ -1,0 +1,78 @@
+:root {
+  --highlight-color :#3889ed;
+}
+
+[data-theme='dark'] {
+  --highlight-color :#2ce9e9;
+}
+
+[data-theme='dark'] .transaction-cont::-webkit-scrollbar {
+  width: 10px;
+}
+
+[data-theme='dark'] .transaction-cont::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+[data-theme='dark'] .transaction-cont::-webkit-scrollbar-thumb {
+  background: var(--highlight-color); /* matches your theme */
+  border-radius: 10px;
+  border: 2px solid #1e1e1e;
+}
+
+[data-theme='dark'] .transaction-cont::-webkit-scrollbar-thumb:hover {
+  background: #50f5f5;
+}
+
+
+
+.transaction-section{
+    width: 35%;
+    height: 304px;
+    margin: 2% 1% 1% 1%;
+    border-radius: 5px;
+    box-shadow:0px 0px 0px 0px;
+}
+
+.transaction-cont{
+    background-color: transparent;
+    height: -webkit-fill-available;  
+    margin: 0% 1%;
+    padding: 0% 0% 0% 2%;
+    overflow-y: scroll;
+}
+
+
+.trans-each-entry{
+    background-color: var(--sidebar-bg);
+    border-radius: 5px;
+}
+
+.transaction-heading{
+    background-color: var(--sidebar-bg);
+    padding: 3% 1%;
+    border-radius: 5px;
+}
+
+.custom-size{
+    font-size: 0.79rem !important;
+}
+
+.highlight{
+    color: var(--highlight-color);
+}
+
+
+@media (max-width:600px){
+    .transaction-section{
+        width: 90%;
+        margin: auto; 
+        margin-top: 5%;       
+        overflow: hidden;
+        margin-bottom: 6%;
+    }
+    .transaction-cont{
+        padding:  0% 0% 0% 0%;
+    }
+}
