@@ -18,7 +18,10 @@ function TransactionLayout() {
   return (
     <div className="transaction-section">
       <h6 className="d-flex ms-2 ms-md-3 transaction-heading">Recent Transactions</h6>
+      
       <div className="transaction-cont">
+      {transactionData ? (
+        <>
           {transactionData?.map((eachdata, index) => {
             return (
               <div className="trans-each-entry d-flex justify-content-between align-items-center m-1 p-2">
@@ -35,6 +38,14 @@ function TransactionLayout() {
               </div>
             );
           })}
+        </>
+      )
+      :(
+         <div className="loader-container">
+            <div className="loader"></div>
+            <p>Loading data...</p>
+         </div>
+      )}
       </div>
     </div>
   );

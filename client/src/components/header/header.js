@@ -18,7 +18,7 @@ function Header() {
   }
 
   return (
-    <div className="d-flex  ms-5 ms-md-4 mt-3 justify-content-between align-items-center">
+    <div className="d-flex head-contains  mt-3 justify-content-between align-items-center">
       <h2>DASHBOARD</h2>
       <div className="d-flex">
         <h5 className="d-none d-md-block me-3 fst-italic">

@@ -45,6 +45,7 @@
   --sidebar-hover-bg: #dee2e6;
   --sidebar-toggle-btn-bg: #212529;
   --sidebar-toggle-btn-color: #ffffff;
+  --hamburger-color :black;
 }
 
 /* Dark theme overrides */
@@ -54,6 +55,7 @@
   --sidebar-hover-bg: #495057;
   --sidebar-toggle-btn-bg: #ffffff;
   --sidebar-toggle-btn-color: #212529;
+  --hamburger-color :white;
 }
 
 /* Sidebar base styles */
@@ -79,6 +81,11 @@
   border: none;
   padding: 6px 10px;
   border-radius: 4px;
+
+  color: var(--hamburger-color) !important;
+  /* border: 1px solid var(--hamburger-color) !important; */
+  padding: 3px 8px !important;
+  margin-left: 1% !important;
 }
 
 /* Responsive adjustment for large screens */
@@ -120,6 +127,7 @@
   background-color: var(--sidebar-hover-bg);
   color: var(--sidebar-text);
 }
+
 
 
 

@@ -33,7 +33,7 @@
     font-weight: 500;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .monthly-card {
         width: 90%;
         margin:auto;
@@ -43,4 +43,24 @@
     .monthlycard-cont{
         margin-top: 7%;
     }
+    .head-contains{
+        margin-left: 12%;
+    }
 }
+
+@media (min-width: 768px) and (max-width:980px){
+    
+.head-contains{
+        margin-left: 8%;
+    }
+}
+
+
+@media (min-width: 980px){
+    
+.head-contains{
+        margin-left: 2%;
+    }
+}
+
+

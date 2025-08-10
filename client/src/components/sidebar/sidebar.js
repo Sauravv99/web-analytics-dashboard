@@ -18,7 +18,7 @@ function SideBar() {
     <div>
       {/* Toggle Button */}
       {/* {!isOpen &&  */}
-       <button className="btn btn-dark mt-3 mt-sm-2 sidebar-toggle d-lg-none" onClick={toggleSidebar}>
+       <button className="btn mt-3 mt-sm-2 sidebar-toggle d-lg-none" onClick={toggleSidebar}>
         <i className="bi bi-list"></i>
       </button>
       {/* } */}

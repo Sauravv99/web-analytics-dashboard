@@ -64,7 +64,12 @@
 }
 
 
-@media (max-width:600px){
+.loader-container{
+  background-color: #212529;
+  overflow: hidden;
+}
+
+@media (max-width:780px){
     .transaction-section{
         width: 90%;
         margin: auto; 
