@@ -73,7 +73,6 @@
   align-items: center;
   justify-content: center;
   height: 300px; /* Adjust height */
-  background-color: transparent;
 }
 
 .loader {

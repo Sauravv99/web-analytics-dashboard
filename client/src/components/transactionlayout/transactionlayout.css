@@ -1,9 +1,11 @@
 :root {
   --highlight-color :#3889ed;
+  --loader-bg :white;
 }
 
 [data-theme='dark'] {
   --highlight-color :#2ce9e9;
+  --loader-bg :#212529;
 }
 
 [data-theme='dark'] .transaction-cont::-webkit-scrollbar {
@@ -65,7 +67,7 @@
 
 
 .loader-container{
-  background-color: #212529;
+  background-color: var(--loader-bg);
   overflow: hidden;
 }
 
