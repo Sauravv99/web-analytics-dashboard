@@ -1,6 +1,7 @@
 // src/components/countryglobe/GlobeChart.js
 import React, { useEffect, useRef, useState } from "react";
 import Globe from "react-globe.gl";
+import * as THREE from 'three';
 import * as d3 from "d3";
 import { feature } from "topojson-client";
 import worldData from "world-atlas/countries-110m.json";
@@ -75,7 +76,10 @@ const GlobeChart = ({ data }) => {
         ref={globeEl}
         width={dimensions.width}
         height={dimensions.height}
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg" 
+        {...(theme === "dark"
+          ? { globeImageUrl: "//unpkg.com/three-globe/example/img/earth-dark.jpg" }
+          : { globeMaterial: new THREE.MeshPhongMaterial({ color: "#ffffff" }) }
+        )}
         backgroundColor= {theme=="dark" ? "#212529" : "#f8f9fa" } 
         polygonsData={countries}
         polygonAltitude={(d) => (d.properties.value ? 0.04 : 0.005)}
