@@ -24,7 +24,7 @@ function TransactionLayout() {
         <>
           {transactionData?.map((eachdata, index) => {
             return (
-              <div className="trans-each-entry d-flex justify-content-between align-items-center m-1 p-2">
+              <div className="trans-each-entry d-flex justify-content-between align-items-center m-1 p-2" key={index}>
                 <div>
                   <h6 className="custom-size highlight">{eachdata.txId}</h6>
                   <h6 className="custom-size">{eachdata.user}</h6>

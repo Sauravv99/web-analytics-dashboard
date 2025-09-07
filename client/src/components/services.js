@@ -19,3 +19,12 @@ export async function fetchTransaction() {
     throw err;
   }
 }
+
+export async function fetchCountries() {
+  try {
+    const res = await axiosInstance.get("/api/countries");
+    return res.data; // axios automatically parses JSON
+  } catch (err) {
+    throw err;
+  }
+}

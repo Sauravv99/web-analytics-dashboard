@@ -1,0 +1,36 @@
+:root{
+    --switch : #3889ed;
+    --circle:white
+}
+
+[data-theme='dark']{
+    --switch : #2ce9e9;
+    --circle:black
+}
+
+
+.country-details{
+    font-size: 0.8rem;
+}
+.geo-head{
+    margin: 0% !important;
+}
+
+
+/* Apply to the custom switch */
+.custom-switch {
+  cursor: pointer;
+}
+
+/* Make the switch itself clickable */
+.custom-switch .form-check-input {
+  cursor: pointer;
+  background-color: #ccc;   /* default */
+  border-color: #ccc;
+}
+
+/* Checked (active) state */
+.custom-switch .form-check-input:checked {
+  background-color: var(--switch); /* teal highlight */
+  border-color: var(--switch);
+}
