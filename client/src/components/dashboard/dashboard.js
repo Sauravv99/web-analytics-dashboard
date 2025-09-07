@@ -1,3 +1,4 @@
+import CountryGlobe from "../countryglobe/countryglobe";
 import MonthlyCard from "../monthlycard/monthlycard";
 import TransactionLayout from "../transactionlayout/transactionlayout";
 import TransportLineChart from "../transportlinechart/transportlinechart";
@@ -62,6 +63,9 @@ function Dashboard() {
        <div className="d-block d-md-flex">
           <TransportLineChart/>
           <TransactionLayout/>
+       </div>
+       <div className="geography-cont mt-4 mb-5">
+          <CountryGlobe/>
        </div>
     </div>
   );

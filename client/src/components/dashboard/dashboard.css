@@ -33,6 +33,16 @@
     font-weight: 500;
 }
 
+
+.geography-cont{
+    background-color: var(--sidebar-bg);;
+    width: 51%;
+    height: 50%;
+    padding: 14px 20px
+}
+
+
+
 @media (max-width: 768px) {
     .monthly-card {
         width: 90%;
@@ -64,3 +74,10 @@
 }
 
 
+
+@media (max-width: 768px) {
+.geography-cont{
+    width: 90%;
+    margin: auto;
+}
+}
