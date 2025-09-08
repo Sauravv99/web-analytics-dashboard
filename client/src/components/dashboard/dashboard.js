@@ -40,7 +40,7 @@ function Dashboard() {
     {
       "data":"132,342",
       "title" : "Traffic received",
-      "percentage" :"43%",
+      "percentage" :"+43%",
       "icon" :"bi bi-stoplights",
        "chartData" : [
         { name: 'previous', value: 32340 },
