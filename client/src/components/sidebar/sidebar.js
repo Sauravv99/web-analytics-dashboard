@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './sidebar.css';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { toggleTheme } from '../../redux/slices/themeslice';
 
 function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
-  // const dispatch = useDispatch();
-  // const theme = useSelector((state) => state.theme.theme);
-  // const handleThemeToggle = () => {
-  //   dispatch(toggleTheme());
-  // };
+  
 
   return (
     <div>
-      {/* Toggle Button */}
-      {/* {!isOpen &&  */}
        <button className="btn mt-3 mt-sm-2 sidebar-toggle d-lg-none" onClick={toggleSidebar}>
         <i className="bi bi-list"></i>
       </button>
-      {/* } */}
 
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? 'd-block' : 'd-none d-lg-block'}`}>
@@ -53,13 +44,6 @@ function SideBar() {
             </NavLink>
           </li>
         </ul>
-
-         {/* <div className="text-center py-3">
-          <button onClick={handleThemeToggle} className="btn btn-sm btn-outline-secondary">
-            Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
-          </button>
-        </div> */}
-
         <div className="text-center text-secondary small py-3">&copy; 2025 all rights reserved</div>
       </div>
     </div>

@@ -34,3 +34,6 @@
   background-color: var(--switch); /* teal highlight */
   border-color: var(--switch);
 }
+.form-check-label{
+  font-size: small;
+}

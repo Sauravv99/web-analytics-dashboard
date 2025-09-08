@@ -21,10 +21,10 @@ function CountryGlobe() {
 
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center">
-        <h6 className="geo-head">Geography based traffic</h6>
+      <div className="d-md-flex justify-content-between align-items-center">
+        <h6 className="geo-head mb-1">Geography based traffic</h6>
         <div className="form-check form-switch custom-switch">
-          <label className="form-check-label" htmlFor="chartToggle">
+          <label className="form-check-label fst-italic" htmlFor="chartToggle">
             {showGlobe ? "Switch to 2D map" : "Switch to 3D globe"}
           </label>
           <input

@@ -1,0 +1,215 @@
+:root {
+  --teamtable-bg: #212529;
+  --teamtable-text: #ffffff;
+}
+
+/* Dark theme overrides */
+[data-theme='dark'] {
+  --teamtable-bg: #f8f9fa;
+  --teamtable-text: #212529;
+}
+
+
+
+.team-container {
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: var(--sidebar-bg);
+  color: var(--border-clr);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Search + filter controls */
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-input,
+.filter-select {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-clr);
+  background-color: var(--monthly-card-bg);
+  color: var(--border-clr);
+  outline: none;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Table styling */
+.modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.modern-table thead {
+ 
+  background-color: var(--highlight-color);
+  color: var(--teamtable-text);
+}
+
+.modern-table th,
+.modern-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+}
+
+.modern-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.modern-table tbody tr:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+/* Role badges */
+.role-badge {
+    display: block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  background-color: var(--highlight-color);
+  color: var(--loader-bg );
+  width: 115px;
+}
+/* 
+.role-badge.admin {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.role-badge.manager {
+  background-color: #faad14;
+  color: black;
+}
+
+.role-badge.user {
+  background-color: #52c41a;
+  color: white;
+} */
+
+/* No data */
+.no-data {
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+  color: gray;
+}
+
+/* Loader */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--border-clr);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Desktop / Tablet */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Mobile Card Layout */
+@media (max-width: 768px) {
+  .modern-table,
+  .modern-table thead,
+  .modern-table tbody,
+  .modern-table th,
+  .modern-table td,
+  .modern-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .modern-table thead {
+    display: none; /* hide header */
+  }
+
+  .modern-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-clr);
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: var(--monthly-card-bg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .modern-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border: none;
+  }
+
+  .modern-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--border-clr);
+  }
+}
+
+
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.page-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-clr);
+  background: var(--monthly-card-bg);
+  color: var(--border-clr);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: var(--border-clr);
+  color: var(--monthly-card-bg);
+}
+
+.page-info {
+  font-size: 0.9rem;
+  font-weight: 500;
+}

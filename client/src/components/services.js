@@ -28,3 +28,13 @@ export async function fetchCountries() {
     throw err;
   }
 }
+
+
+export async function fetchTeam() {
+  try {
+    const res = await axiosInstance.get("/api/team");
+    return res.data; // axios automatically parses JSON
+  } catch (err) {
+    throw err;
+  }
+}
